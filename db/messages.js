@@ -8,9 +8,9 @@ function getAll(){
 
 const schema = Joi.object().keys({
     username: Joi.string().alphanum().required(),
-    subject: Joi.string().required(),
+    subject: Joi.string().allow('').optional(),
     message: Joi.string().max(255).required(),
-    imageURL: Joi.string()
+    imageURL: Joi.string().allow('').optional()
     .uri({
         scheme: [
         /https?/
